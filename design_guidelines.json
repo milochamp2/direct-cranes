@@ -1,0 +1,106 @@
+{
+  "theme": "Dark",
+  "art_direction": "Industrial Brutalism & High-Fashion Editorial. Emphasizes immense scale, precision, engineered power, and premium quality. It avoids 'SaaS blue' and standard generic layouts, replacing them with monolithic typography, architectural grid structures, and cinematic lighting.",
+  "typography": {
+    "fonts": {
+      "headings": "Cabinet Grotesk",
+      "body": "Manrope",
+      "mono_accents": "IBM Plex Mono"
+    },
+    "hierarchy": {
+      "h1": "text-5xl sm:text-7xl lg:text-[8vw] font-black uppercase tracking-tighter leading-none",
+      "h2": "text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight",
+      "h3": "text-2xl sm:text-3xl font-semibold",
+      "body": "text-base md:text-lg font-normal leading-relaxed text-zinc-400",
+      "overline_chapters": "font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-orange-500"
+    },
+    "rules": [
+      "Headings must use tight letter spacing.",
+      "Overlines/Labels MUST be Uppercase + Tiny + Wide Spacing.",
+      "Never center paragraphs. Optical alignment over geometric."
+    ]
+  },
+  "colors": {
+    "background": "#0A0A0A",
+    "surface": "#121212",
+    "glass": "bg-white/5 backdrop-blur-xl border border-white/10",
+    "text_primary": "#F4F4F5",
+    "text_secondary": "#8A8A93",
+    "accent": "#FF4500",
+    "rules": [
+      "Do NOT use complete transparent backgrounds for headers/surfaces; use glassmorphism.",
+      "Use #FF4500 sparingly (kinetic trigger for interactions, active states, progress indicators)."
+    ]
+  },
+  "grids_and_layouts": {
+    "strategy": "The Bento Protocol & Architectural Grids",
+    "hero": "Full height (h-screen) with absolute positioned 3D canvas (z-10). Typography positioned behind (z-0) and in front (z-20) to create immense depth.",
+    "sections": {
+      "numbered_chapters": "Each section starts with an IBM Plex Mono chapter marker like '[01] MOBILE CRANES'.",
+      "bento_fleet": "Asymmetric bento grid (grid-cols-1 md:grid-cols-12 gap-8). Mix col-span-8 and col-span-4 to create tension.",
+      "photography": "Spotlight effect. Clipped frames (sharp 1px border-white/10, p-4 padding around the image within the card). Images must feel like physical prints."
+    },
+    "spacing": "Generous. Use py-24 or py-32 for section padding. Container padding px-6 md:px-12."
+  },
+  "motion_and_interactions": {
+    "scrolling": "Lenis (smooth momentum scroll). Mandatory for the premium feel.",
+    "hero_reveal": "Masked line-by-line text reveal. Wrap lines in overflow-hidden divs, translate Y from 100% to 0% using framer-motion.",
+    "marquee": "Slow editorial marquee. Font: Cabinet Grotesk, massive outline text (text-8xl text-transparent border-white/20 style webkit-text-stroke) or slow organic ribbon.",
+    "scroll_reveals": "Framer motion whileInView. Subtle y-axis lift (y: 40) and opacity fade."
+  },
+  "3d_and_creative_components": {
+    "libraries": [
+      "three",
+      "@react-three/fiber",
+      "@react-three/drei",
+      "framer-motion",
+      "lenis"
+    ],
+    "scene_setup": "Use <Canvas> with <Environment preset='city'> or 'warehouse'. Crucial: Add <SpotLight> for cinematic shadows on the crane models.",
+    "interaction": "Use <PresentationControls> or <OrbitControls> (restricted angles) so users can rotate the crane. Add small glowing HTML hotspots (<Html> from drei) pointing to crane specs.",
+    "fallback": "If no 3D model (.gltf/.glb) is available, use highly stylized abstract 3D geometric shapes to represent a crane structure, OR construct a layered 3D parallax effect using Drei's <Image> and <ScrollControls>."
+  },
+  "image_urls": [
+    {
+      "category": "Hero / Immense Scale",
+      "url": "https://images.unsplash.com/photo-1516971849755-77ddd3e004b0",
+      "description": "Black and grey metal crane silhouette, high contrast"
+    },
+    {
+      "category": "Tower Cranes Section",
+      "url": "https://images.unsplash.com/photo-1569169513673-2cecbfc943a9",
+      "description": "Yellow building crane against dramatic sky"
+    },
+    {
+      "category": "Heavy Haulage Section",
+      "url": "https://images.unsplash.com/photo-1586191552066-d52dd1e3af86",
+      "description": "Red and white heavy transport truck, low angle cinematic"
+    },
+    {
+      "category": "Lift Studies Section",
+      "url": "https://images.unsplash.com/photo-1542621334-a254cf47733d",
+      "description": "Industrial engineer blueprint with pencil"
+    }
+  ],
+  "component_path": "src/components/ui",
+  "instructions_to_main_agent": [
+    "Install required libraries: framer-motion, lenis (or @studio-freight/react-lenis), three, @react-three/fiber, @react-three/drei, lucide-react.",
+    "Build the hero section with a kinetic, masked text reveal (framer-motion). The text should say something like 'ENGINEERED POWER' in massive typography. Layer it behind/around the 3D canvas.",
+    "Implement an interactive 3D model canvas using @react-three/fiber. Use a stylized industrial representation (or basic three.js primitives creatively arranged as a crane) that floats and reacts to scroll/mouse using <PresentationControls>.",
+    "Construct the requested sections: Mobile Cranes, Tower Cranes, Helicopter Lifting, Heavy Haulage, Lift Studies, Locations, About Us. Group these cleanly using the numbered chapter format: [01] MOBILE CRANES.",
+    "Use a slow editorial Marquee section between major layout blocks using framer-motion.",
+    "Ensure all interactive elements have data-testid attributes.",
+    "Avoid Shadcn UI entirely for the marketing page layouts; use raw Tailwind CSS classes in raw HTML tags (div, section) to get exact control of overlaps, offsets, and brutalist grid aesthetics."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling. Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur). Never use completely transparent backgrounds for overlapping text elements.",
+    "You MUST NOT apply universal transition (e.g., transition: all). Always add transitions for specific interactive elements.",
+    "You MUST NOT center align the app container. Optical alignment over geometric alignment.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "All interactive and key informational elements MUST include a data-testid attribute to facilitate robust automated testing.",
+    "Do not use placeholder text for images. Use the provided image URLs."
+  ]
+}

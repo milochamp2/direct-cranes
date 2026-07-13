@@ -1,0 +1,37 @@
+{
+  "summary": "Full frontend regression of restructured Direct Cranes Hire site (5 services + locations + about). Home, all 5 service pages incl. embedded fleet spec sheets, prev/next cycling, locations, about, old-route redirects (fleet/projects/contact/service-areas/services/mobile-crane-hire all redirect to /), footer, and mobile viewport nav all verified. 53/53 real checks passed (3 reported 'failures' were selector mistakes in the test itself, not app bugs — verified via source + screenshot).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "site-data.js VALUES uses n='01'/'02'/'03' — testids are about-value-01 etc. Fine but if intent was numeric 1/2/3 note that.",
+    "No functional issues found."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (no backend)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Site restructured to 5 services (mobile-cranes, tower-cranes, helicopter-lifting, heavy-haulage, lift-studies) + /locations + /about. About page value-card testids follow pattern about-value-{01|02|03} (zero-padded from VALUES[].n), not 1/2/3. contact-phone-card and contact-email-card ARE the <a> elements themselves (tel:/mailto: on the card).",
+  "verified_flows": [
+    "Home hero + services grid (5) + fleet features (AT-100, TWR-65, HELI) + locations + about + footer",
+    "Navbar: 7 flat links, no Services dropdown",
+    "/mobile-cranes with fleet-sheet-AT-100/FR-25/SL-250",
+    "/tower-cranes with fleet-sheet-TWR-65",
+    "/helicopter-lifting with fleet-sheet-HELI",
+    "/heavy-haulage with fleet-sheet-HT-45 (image loaded: naturalWidth>0)",
+    "/lift-studies has NO service-machines section",
+    "Prev/next cycles through 5 services correctly (lift-studies -> mobile-cranes wraps)",
+    "/locations with area-block-VIC/QLD/SA + locations-call-btn",
+    "/about with about-stats, 3 value cards, phone/email cards (tel:/mailto:), 3 depot cards",
+    "Old routes /fleet, /projects, /contact, /service-areas, /services/mobile-crane-hire all 302 to /",
+    "Footer links visible",
+    "Mobile (390x844): toggle opens menu with all 7 nav-mobile-link-* items; navigation to /tower-cranes works; phone icon visible",
+    "No console errors observed"
+  ]
+}
