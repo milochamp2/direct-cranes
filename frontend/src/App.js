@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-route
 import { motion, useScroll, useSpring } from "framer-motion";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
+import SakuraPetals from "@/components/site/SakuraPetals";
 import Home from "@/pages/Home";
 import ServicePage from "@/pages/ServicePage";
 import LocationsPage from "@/pages/LocationsPage";
@@ -55,6 +56,7 @@ function App() {
       <div className="App grain">
         <ScrollToTop />
         <ScrollProgress />
+        <SakuraPetals />
         <Navbar />
         <main>
           <Routes>

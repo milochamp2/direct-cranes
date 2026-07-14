@@ -114,6 +114,42 @@ body {
     text-shadow: 5px 6px 0 rgba(22,18,15,0.9);
 }
 
+/* Sakura petals — ambient falling cherry blossoms, site-wide */
+.sakura-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
+    overflow: hidden;
+}
+.sakura-drop {
+    position: absolute;
+    top: -14vh;
+    animation-name: sakura-drop;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+.sakura-sway {
+    display: block;
+    animation-name: sakura-sway;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: transform;
+    filter: drop-shadow(0 1px 1px rgba(22,18,15,0.15));
+}
+@keyframes sakura-drop {
+    from { transform: translateY(-14vh); }
+    to   { transform: translateY(114vh); }
+}
+@keyframes sakura-sway {
+    0%,100% { transform: translateX(-16px) rotate(-25deg); }
+    50%     { transform: translateX(16px) rotate(210deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .sakura-layer { display: none; }
+}
+
 @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
