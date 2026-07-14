@@ -29,7 +29,7 @@ export default function Fleet() {
             <Reveal key={f.code} delay={i * 0.1}>
               <Link
                 to={`/${f.serviceSlug}`}
-                className="group block overflow-hidden rounded-3xl border border-flame/25 bg-white/[0.02] transition-colors hover:border-flame/60"
+                className="glass-panel glass-hover glass-sheen group block overflow-hidden rounded-3xl"
                 data-testid={`fleet-feature-${f.code}`}
               >
                 <div className="overflow-hidden bg-black">
