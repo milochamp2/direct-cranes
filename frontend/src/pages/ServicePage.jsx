@@ -73,7 +73,7 @@ export default function ServicePage({ slug }) {
             </a>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="sticker rounded-3xl bg-paper p-8" data-testid="service-capabilities">
+            <div className="glass-light glass-sheen rounded-3xl p-8" data-testid="service-capabilities">
               <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">Capabilities</p>
               <ul className="mt-6 space-y-4">
                 {service.capabilities.map((c) => (

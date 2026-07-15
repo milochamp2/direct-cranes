@@ -1,4 +1,83 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+
+/**
+ * Glassmorphism plugin — a cohesive frosted-glass component layer with clear
+ * transparency. Blur + saturate for depth, a bright 1px top-edge highlight,
+ * and soft ambient shadow. Tuned per surface (dark section / light section /
+ * flame accent) so text keeps WCAG contrast.
+ */
+const glassmorphism = plugin(function ({ addComponents }) {
+  addComponents({
+    /* Navbar bar — kept legible over the dark hero */
+    ".glass": {
+      background: "rgba(242,237,227,0.78)",
+      backdropFilter: "blur(20px) saturate(150%)",
+      WebkitBackdropFilter: "blur(20px) saturate(150%)",
+      border: "2px solid #16120F",
+    },
+    /* Dark / obsidian sections: translucent white frost */
+    ".glass-panel": {
+      background: "rgba(255,255,255,0.055)",
+      backdropFilter: "blur(20px) saturate(150%)",
+      WebkitBackdropFilter: "blur(20px) saturate(150%)",
+      border: "1px solid rgba(255,255,255,0.14)",
+      boxShadow: "0 10px 34px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.10)",
+    },
+    /* Light / paper sections: clear frosted panel */
+    ".glass-light": {
+      background: "rgba(255,255,255,0.42)",
+      backdropFilter: "blur(22px) saturate(135%)",
+      WebkitBackdropFilter: "blur(22px) saturate(135%)",
+      border: "1px solid rgba(255,255,255,0.55)",
+      boxShadow: "0 10px 30px rgba(22,18,15,0.10), inset 0 1px 0 rgba(255,255,255,0.7)",
+    },
+    /* Flame-tinted accent glass */
+    ".glass-flame": {
+      background: "rgba(225,74,33,0.12)",
+      backdropFilter: "blur(20px) saturate(160%)",
+      WebkitBackdropFilter: "blur(20px) saturate(160%)",
+      border: "1px solid rgba(225,74,33,0.30)",
+      boxShadow: "0 10px 30px rgba(185,58,24,0.15), inset 0 1px 0 rgba(255,255,255,0.18)",
+    },
+    /* Dark spec tiles (fleet spec sheets) */
+    ".spec-card": {
+      background: "rgba(255,255,255,0.04)",
+      backdropFilter: "blur(14px) saturate(140%)",
+      WebkitBackdropFilter: "blur(14px) saturate(140%)",
+      border: "1px solid rgba(225,74,33,0.22)",
+      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
+    },
+    /* Interaction: lift + flame edge glow */
+    ".glass-hover": {
+      transition:
+        "background 0.3s ease, border-color 0.3s ease, box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1)",
+    },
+    ".glass-hover:hover": {
+      background: "rgba(255,255,255,0.10)",
+      borderColor: "rgba(225,74,33,0.55)",
+      boxShadow: "0 18px 44px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.14)",
+      transform: "translateY(-4px)",
+    },
+    ".glass-light.glass-hover:hover": {
+      background: "rgba(255,255,255,0.62)",
+      borderColor: "rgba(225,74,33,0.45)",
+      boxShadow: "0 18px 40px rgba(22,18,15,0.14), inset 0 1px 0 rgba(255,255,255,0.8)",
+    },
+    /* Top-edge light reflection */
+    ".glass-sheen": { position: "relative", overflow: "hidden" },
+    ".glass-sheen::before": {
+      content: '""',
+      position: "absolute",
+      inset: "0 0 auto 0",
+      height: "1px",
+      background:
+        "linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent)",
+      pointerEvents: "none",
+    },
+  });
+});
+
 module.exports = {
     darkMode: ["class"],
     content: [
@@ -70,5 +149,5 @@ module.exports = {
       }
     }
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), glassmorphism],
 };

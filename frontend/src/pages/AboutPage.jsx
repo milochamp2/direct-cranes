@@ -75,10 +75,10 @@ export default function AboutPage() {
               The Direct <span className="text-stroke-flame">way.</span>
             </h2>
           </Reveal>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {VALUES.map((v, i) => (
               <Reveal key={v.n} delay={i * 0.1}>
-                <div className="sticker sticker-hover h-full rounded-3xl bg-cream p-8" data-testid={`about-value-${v.n}`}>
+                <div className="glass-light glass-sheen glass-hover h-full rounded-3xl p-8" data-testid={`about-value-${v.n}`}>
                   <p className="font-display text-6xl font-black text-flame">{v.n}</p>
                   <h3 className="mt-6 font-display text-2xl font-black leading-tight text-ink">{v.title}</h3>
                   <p className="mt-4 text-sm leading-relaxed text-ink/70">{v.body}</p>
@@ -137,7 +137,7 @@ export default function AboutPage() {
           <div className="mt-6 grid gap-6 lg:grid-cols-3">
             {SERVICE_AREAS.map((loc, i) => (
               <Reveal key={loc.code} delay={0.15 + i * 0.08}>
-                <div className="sticker rounded-3xl bg-paper p-8" data-testid={`contact-depot-${loc.code}`}>
+                <div className="glass-light glass-sheen rounded-3xl p-8" data-testid={`contact-depot-${loc.code}`}>
                   <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-flame">
                     <MapPin size={13} /> {loc.code}
                   </p>

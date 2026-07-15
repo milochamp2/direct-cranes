@@ -8,15 +8,19 @@ import { BRAND, STATS } from "@/lib/site-data";
 export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden pt-28 sm:pt-32" data-testid="hero-section">
-      {/* Illustration background + black transparency overlay */}
+      {/* Illustration background + black transparency overlay (portrait art on mobile) */}
       <div className="absolute inset-0 z-0" data-testid="hero-bg">
-        <img
-          src="/images/hero-bg.png"
-          alt="Direct Cranes 100T all-terrain crane on a coastal highway at sunset"
-          className="h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/25" />
+        <picture>
+          <source media="(max-width: 640px)" srcSet="/images/hero-bg-mobile.webp" />
+          <img
+            src="/images/hero-bg.webp"
+            alt="Direct Cranes 100T all-terrain crane on a coastal highway at sunset"
+            className="h-full w-full object-cover object-center"
+            fetchpriority="high"
+          />
+        </picture>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/10 sm:to-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] max-w-[1600px] flex-col justify-center px-5 pb-14 sm:px-10">

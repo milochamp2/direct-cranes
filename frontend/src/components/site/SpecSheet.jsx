@@ -19,7 +19,7 @@ const ICONS = {
 export default function SpecSheet({ machine, index = 0, linkService = false }) {
   return (
     <Reveal>
-      <div className="rounded-[2rem] border border-flame/25 bg-white/[0.02] p-6 sm:p-10" data-testid={`fleet-sheet-${machine.code}`}>
+      <div className="glass-panel glass-sheen rounded-[2rem] p-6 sm:p-10" data-testid={`fleet-sheet-${machine.code}`}>
         <div className={`grid items-center gap-8 lg:grid-cols-2 ${index % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
           <div className={`relative overflow-hidden rounded-3xl ${machine.vector ? "bg-gradient-to-br from-white/[0.06] to-black" : "bg-black"}`}>
             <img

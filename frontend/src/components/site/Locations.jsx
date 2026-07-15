@@ -6,8 +6,11 @@ import { SERVICE_AREAS } from "@/lib/site-data";
 
 export default function Locations() {
   return (
-    <section className="bg-paper py-24 sm:py-32" data-testid="locations-section">
-      <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
+    <section className="relative overflow-hidden bg-paper py-24 sm:py-32" data-testid="locations-section">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-10 h-80 w-80 -translate-x-1/2 rounded-full bg-flame/12 blur-3xl" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-[1600px] px-5 sm:px-10">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -25,10 +28,10 @@ export default function Locations() {
             </Link>
           </div>
         </Reveal>
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICE_AREAS.map((loc, i) => (
             <Reveal key={loc.code} delay={i * 0.1}>
-              <div className="sticker sticker-hover h-full rounded-3xl bg-cream p-8" data-testid={`location-card-${loc.code}`}>
+              <div className="glass-light glass-sheen glass-hover h-full rounded-3xl p-8" data-testid={`location-card-${loc.code}`}>
                 <p className="font-display text-6xl font-black text-stroke-flame">{loc.code}</p>
                 <h3 className="mt-5 font-display text-2xl font-black text-ink">{loc.state}</h3>
                 <p className="mt-1 flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.15em] text-flame">

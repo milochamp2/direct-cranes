@@ -24,7 +24,7 @@ export default function LocationsPage() {
         <div className="mx-auto max-w-[1600px] space-y-8 px-5 sm:px-10">
           {SERVICE_AREAS.map((loc, i) => (
             <Reveal key={loc.code} delay={i * 0.08}>
-              <div className="sticker grid gap-8 rounded-[2rem] bg-cream p-6 sm:p-10 lg:grid-cols-12" data-testid={`area-block-${loc.code}`}>
+              <div className="glass-light glass-sheen grid gap-8 rounded-[2rem] p-6 sm:p-10 lg:grid-cols-12" data-testid={`area-block-${loc.code}`}>
                 <div className="lg:col-span-5">
                   <p className="font-display text-6xl font-black text-stroke-flame sm:text-7xl">{loc.code}</p>
                   <h2 className="mt-4 font-display text-3xl font-black text-ink">{loc.state}</h2>

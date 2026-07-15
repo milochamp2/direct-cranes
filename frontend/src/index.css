@@ -158,61 +158,6 @@ body {
     animation: marquee 30s linear infinite;
 }
 
-/* Dark spec card glow (fleet spec sheets) */
-.spec-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(225,74,33,0.25);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.glass {
-    background: rgba(242,237,227,0.85);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 2px solid #16120F;
-}
-
-/* Glassmorphism — frosted glass panels (blur 14-18px, translucent, 1px light border, saturate for depth) */
-/* For dark / obsidian sections: translucent white frost */
-.glass-panel {
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(16px) saturate(140%);
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
-    border: 1px solid rgba(255,255,255,0.12);
-}
-/* For light / paper sections: translucent cream frost */
-.glass-light {
-    background: rgba(242,237,227,0.55);
-    backdrop-filter: blur(16px) saturate(120%);
-    -webkit-backdrop-filter: blur(16px) saturate(120%);
-    border: 1px solid rgba(22,18,15,0.12);
-}
-/* Flame-tinted glass for accent surfaces */
-.glass-flame {
-    background: rgba(225,74,33,0.10);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
-    border: 1px solid rgba(225,74,33,0.28);
-}
-.glass-hover {
-    transition: background 0.3s ease, border-color 0.3s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1);
-}
-.glass-hover:hover {
-    background: rgba(255,255,255,0.10);
-    border-color: rgba(225,74,33,0.55);
-    transform: translateY(-4px);
-}
-/* Subtle top-edge light reflection for extra depth */
-.glass-sheen {
-    position: relative;
-    overflow: hidden;
-}
-.glass-sheen::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    pointer-events: none;
-}
+/* Glassmorphism component classes live in the Tailwind glass plugin
+   (tailwind.config.js): .glass, .glass-panel, .glass-light, .glass-flame,
+   .glass-hover, .glass-sheen, .spec-card */
