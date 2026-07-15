@@ -9,6 +9,11 @@ export const IMG = {
   transport: `${IMGBASE}/aa963c8f4eae013b5514908e2685deeb4e0a9262b358efec6c593cfb4d861814.png`,
   iconic: "https://customer-assets.emergentagent.com/job_heavy-lift-3d/artifacts/g6vjiy80_image.png",
   liftplan: "https://customer-assets.emergentagent.com/job_heavy-lift-3d/artifacts/33dv70nn_image.png",
+  // Stock placeholder photos (Unsplash) — swap for real Direct Cranes site photos
+  stockSite: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80",
+  stockAerial: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80",
+  stockLogistics: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80",
+  stockPlans: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80",
 };
 
 export const BRAND = {
@@ -47,7 +52,7 @@ export const SERVICES = [
       { k: "Setup time", v: "0 – 30 min" },
       { k: "Hire type", v: "Wet · ST & LT" },
     ],
-    image: IMG.at100,
+    image: IMG.stockSite,
     machines: ["AT-250", "AT-100", "FR-25", "SL-250"],
   },
   {
@@ -66,7 +71,7 @@ export const SERVICES = [
       { k: "Duration", v: "Long-term" },
       { k: "Jib", v: "Up to 65 m" },
     ],
-    image: IMG.tower,
+    image: IMG.stockAerial,
     machines: ["TWR-65"],
   },
   {
@@ -104,7 +109,7 @@ export const SERVICES = [
       { k: "Loads", v: "Plant & machinery" },
       { k: "Permits", v: "Handled in-house" },
     ],
-    image: IMG.transport,
+    image: IMG.stockLogistics,
     machines: ["HT-45"],
   },
   {
@@ -123,7 +128,7 @@ export const SERVICES = [
       { k: "Docs", v: "Full safety pack" },
       { k: "On-site", v: "Supervision" },
     ],
-    image: IMG.at100,
+    image: IMG.stockPlans,
     machines: [],
   },
 ];
@@ -134,7 +139,8 @@ export const FLEET = [
     name: "100T All-Terrain Crane",
     tagline: "Power. Precision. Performance.",
     blurb: "Built for the most demanding lifts with superior reach, control and stability.",
-    image: IMG.at100,
+    image: "/images/fleet-at-100.png",
+    vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
       { icon: "hook", label: "Max lift capacity", value: "100", unit: "tonnes" },
@@ -152,7 +158,8 @@ export const FLEET = [
     name: "250T All-Terrain Crane",
     tagline: "All-terrain, pro-grade to 250T.",
     blurb: "Our flagship all-terrain — road-legal to 250T with long main boom and luffing jib for heavy, high and long-reach lifts.",
-    image: IMG.at100,
+    image: "/images/fleet-at-100.png",
+    vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
       { icon: "hook", label: "Max lift capacity", value: "250", unit: "tonnes" },
@@ -170,7 +177,8 @@ export const FLEET = [
     name: "25T Franna Pick & Carry",
     tagline: "No setup. No fuss. Just lift.",
     blurb: "The tight-access workhorse — picks the load and carries it anywhere on site.",
-    image: IMG.franna,
+    image: "/images/fleet-franna-25.png",
+    vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
       { icon: "hook", label: "Max lift capacity", value: "25", unit: "tonnes" },
@@ -186,7 +194,8 @@ export const FLEET = [
     name: "Crawler Cranes 40T – 250T",
     tagline: "The heavy hitter.",
     blurb: "Lattice-boom crawlers from 40T to 250T for structural steel, bridge beams and major infrastructure.",
-    image: IMG.slew,
+    image: "/images/fleet-crawler.png",
+    vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
       { icon: "hook", label: "Capacity range", value: "40–250", unit: "tonnes" },
@@ -235,7 +244,8 @@ export const FLEET = [
     name: "Lifting Helicopter",
     tagline: "When no crane can reach.",
     blurb: "Aerial external-load lifting for remote sites and rooftop installations.",
-    image: IMG.helicopter,
+    image: "/images/fleet-heli.png",
+    vector: true,
     serviceSlug: "helicopter-lifting",
     specs: [
       { icon: "hook", label: "External load", value: "1,100", unit: "kg" },

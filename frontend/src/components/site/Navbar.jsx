@@ -17,9 +17,8 @@ export default function Navbar() {
       <div className="mx-3 mt-3 sm:mx-5 sm:mt-4">
         <div className="glass sticker-sm rounded-full px-4 sm:px-6">
           <div className="flex h-14 items-center justify-between gap-3">
-            <Link to="/" className="flex items-baseline gap-2" data-testid="nav-logo">
-              <span className="font-wide text-lg tracking-tight text-flame">DIRECT</span>
-              <span className="font-wide text-[10px] tracking-[0.3em] text-ink">CRANES</span>
+            <Link to="/" className="flex items-center" data-testid="nav-logo" aria-label="Direct Cranes home">
+              <img src="/images/logo.png" alt="Direct Cranes" className="h-7 w-auto sm:h-8" />
             </Link>
 
             <nav className="hidden items-center lg:flex">

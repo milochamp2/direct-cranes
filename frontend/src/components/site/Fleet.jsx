@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { FLEET } from "@/lib/site-data";
 
-const featured = FLEET.filter((f) => ["AT-100", "TWR-65", "HELI"].includes(f.code));
+const featured = FLEET.filter((f) => ["AT-100", "SL-250", "HELI"].includes(f.code));
 
 export default function Fleet() {
   return (
@@ -32,11 +32,13 @@ export default function Fleet() {
                 className="glass-panel glass-hover glass-sheen group block overflow-hidden rounded-3xl"
                 data-testid={`fleet-feature-${f.code}`}
               >
-                <div className="overflow-hidden bg-black">
+                <div className={`overflow-hidden ${f.vector ? "bg-gradient-to-br from-white/[0.06] to-black" : "bg-black"}`}>
                   <img
                     src={f.image}
                     alt={f.name}
-                    className="aspect-[3/2] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`aspect-[3/2] w-full transition-transform duration-700 group-hover:scale-105 ${
+                      f.vector ? "object-contain p-5" : "object-cover"
+                    }`}
                     loading="lazy"
                   />
                 </div>

@@ -21,11 +21,17 @@ export default function SpecSheet({ machine, index = 0, linkService = false }) {
     <Reveal>
       <div className="rounded-[2rem] border border-flame/25 bg-white/[0.02] p-6 sm:p-10" data-testid={`fleet-sheet-${machine.code}`}>
         <div className={`grid items-center gap-8 lg:grid-cols-2 ${index % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
-          <div className="relative overflow-hidden rounded-3xl bg-black">
+          <div className={`relative overflow-hidden rounded-3xl ${machine.vector ? "bg-gradient-to-br from-white/[0.06] to-black" : "bg-black"}`}>
             <img
               src={machine.image}
               alt={machine.name}
-              className={`w-full object-cover ${machine.portrait ? "max-h-[540px] object-top" : "aspect-[3/2]"}`}
+              className={`w-full ${
+                machine.vector
+                  ? "aspect-[3/2] object-contain p-6"
+                  : machine.portrait
+                  ? "max-h-[540px] object-cover object-top"
+                  : "aspect-[3/2] object-cover"
+              }`}
               loading="lazy"
             />
             <span className="absolute left-4 top-4 rounded-full border border-flame/50 bg-black/60 px-4 py-1.5 font-wide text-xs text-flame backdrop-blur">
