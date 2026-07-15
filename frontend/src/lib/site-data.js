@@ -117,6 +117,9 @@ export const SERVICES = [
     gallery: [
       { src: "/images/haulage-2.webp", alt: "Direct Cranes prime mover and all-terrain crane at a construction site" },
       { src: "/images/haulage-3.webp", alt: "Crawler crane loaded on a low-loader at the depot at night" },
+      { src: "/images/crane-1.webp", alt: "Liebherr all-terrain crane in Direct Cranes livery at the depot" },
+      { src: "/images/crane-2.webp", alt: "Direct Cranes all-terrain crane lifting an excavator on site" },
+      { src: "/images/crane-3.webp", alt: "Direct Cranes all-terrain crane on a commercial building lift" },
     ],
     machines: ["HT-45"],
   },
