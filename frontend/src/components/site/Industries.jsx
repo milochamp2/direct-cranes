@@ -4,7 +4,7 @@ import { INDUSTRIES } from "@/lib/site-data";
 
 export default function Industries() {
   return (
-    <section className="border-y-[3px] border-ink bg-flame py-20 sm:py-24" data-testid="industries-section">
+    <section className="border-y-[3px] border-ink bg-flame py-12 sm:py-14" data-testid="industries-section">
       <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink">Who we lift for</p>
@@ -13,7 +13,7 @@ export default function Industries() {
           </h2>
         </Reveal>
         <Reveal delay={0.15}>
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3">
             {INDUSTRIES.map((ind) => (
               <span
                 key={ind}
