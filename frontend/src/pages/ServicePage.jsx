@@ -111,6 +111,31 @@ export default function ServicePage({ slug }) {
         </section>
       )}
 
+      {/* Real-job photo gallery */}
+      {service.gallery && service.gallery.length > 0 && (
+        <section className="border-y-[3px] border-ink bg-obsidian py-20 sm:py-24" data-testid="service-gallery">
+          <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
+            <Reveal>
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">On the road</p>
+              <h2 className="mt-3 font-display text-3xl font-black text-cream sm:text-5xl">
+                Real <span className="text-flame">jobs.</span>
+              </h2>
+            </Reveal>
+            <div className="mt-12 columns-1 gap-4 sm:columns-2 lg:columns-3">
+              {service.gallery.map((g, i) => (
+                <div key={g.src} className="mb-4 break-inside-avoid">
+                  <Reveal delay={(i % 3) * 0.08}>
+                    <div className="glass-panel glass-sheen overflow-hidden rounded-2xl p-1.5">
+                      <img src={g.src} alt={g.alt} loading="lazy" className="w-full rounded-xl object-cover" />
+                    </div>
+                  </Reveal>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Prev / next */}
       <section className="border-t-2 border-ink bg-paper">
         <div className="mx-auto grid max-w-[1600px] grid-cols-2 px-5 sm:px-10">

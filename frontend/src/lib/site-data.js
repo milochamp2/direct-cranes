@@ -52,7 +52,11 @@ export const SERVICES = [
       { k: "Setup time", v: "0 – 30 min" },
       { k: "Hire type", v: "Wet · ST & LT" },
     ],
-    image: IMG.stockSite,
+    image: "/images/crane-1.webp",
+    gallery: [
+      { src: "/images/crane-2.webp", alt: "Direct Cranes all-terrain crane lifting an excavator on site" },
+      { src: "/images/crane-3.webp", alt: "Direct Cranes all-terrain crane on a commercial building lift" },
+    ],
     machines: ["AT-60", "AT-100", "FR-25", "FR-40"],
   },
   {
@@ -109,7 +113,11 @@ export const SERVICES = [
       { k: "Loads", v: "Plant & machinery" },
       { k: "Permits", v: "Handled in-house" },
     ],
-    image: IMG.stockLogistics,
+    image: "/images/haulage-1.webp",
+    gallery: [
+      { src: "/images/haulage-2.webp", alt: "Direct Cranes prime mover and all-terrain crane at a construction site" },
+      { src: "/images/haulage-3.webp", alt: "Crawler crane loaded on a low-loader at the depot at night" },
+    ],
     machines: ["HT-45"],
   },
   {
