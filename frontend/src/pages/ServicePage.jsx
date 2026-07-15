@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Navigate } from "react-router-dom";
 import { Phone, Check, ArrowLeft, ArrowRight } from "lucide-react";
 import { Reveal, MaskedLines } from "@/components/site/Reveal";
+import Seo from "@/components/site/Seo";
 import SpecSheet from "@/components/site/SpecSheet";
 import { BRAND, SERVICES, FLEET } from "@/lib/site-data";
 
@@ -15,6 +16,7 @@ export default function ServicePage({ slug }) {
 
   return (
     <div key={slug} data-testid={`service-page-${slug}`}>
+      <Seo title={service.title} description={service.short} path={`/${slug}`} />
       {/* Header */}
       <section className="bg-cream pb-16 pt-32 sm:pt-40">
         <div className="mx-auto max-w-[1600px] px-5 sm:px-10">

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "@/App.css";
 import Lenis from "lenis";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
@@ -52,7 +53,8 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
       <div className="App grain">
         <ScrollToTop />
         <ScrollProgress />
@@ -71,7 +73,8 @@ function App() {
         </main>
         <Footer />
       </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

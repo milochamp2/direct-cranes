@@ -128,7 +128,7 @@ export const SERVICES = [
       { k: "Docs", v: "Full safety pack" },
       { k: "On-site", v: "Supervision" },
     ],
-    image: "/images/lift-plan.jpg",
+    image: "/images/lift-plan.webp",
     containImage: true,
     machines: [],
   },
@@ -140,7 +140,7 @@ export const FLEET = [
     name: "100T All-Terrain Crane",
     tagline: "Power. Precision. Performance.",
     blurb: "Built for the most demanding lifts with superior reach, control and stability.",
-    image: "/images/fleet-at-100.png",
+    image: "/images/fleet-at-100.webp",
     vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
@@ -159,7 +159,7 @@ export const FLEET = [
     name: "60T All-Terrain Crane",
     tagline: "Compact power, city-legal reach.",
     blurb: "A nimble 60T all-terrain — quick to rig and road-legal, ideal for tight urban lifts and general construction.",
-    image: "/images/fleet-at-60.png",
+    image: "/images/fleet-at-60.webp",
     vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
@@ -178,7 +178,7 @@ export const FLEET = [
     name: "Franna 25T Pick-and-Carry Crane",
     tagline: "No setup. No fuss. Just lift.",
     blurb: "The tight-access workhorse — picks the load and carries it anywhere on site.",
-    image: "/images/fleet-franna-25.png",
+    image: "/images/fleet-franna-25.webp",
     vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
@@ -195,7 +195,7 @@ export const FLEET = [
     name: "Franna 40T Pick-and-Carry Crane",
     tagline: "More pick, same no-fuss carry.",
     blurb: "The big-brother Franna — 40T of pick-and-carry capacity for heavier tight-access work with zero setup.",
-    image: "/images/fleet-franna-40.png",
+    image: "/images/fleet-franna-40.webp",
     vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
@@ -229,7 +229,7 @@ export const FLEET = [
     name: "Crawler Crane Transport / Low-Loader Haulage",
     tagline: "The load behind the lift.",
     blurb: "Low-loader haulage for crawler cranes and heavy plant — semi-trailers, counterweight trucks and full route coordination.",
-    image: "/images/fleet-crawler.png",
+    image: "/images/fleet-crawler.webp",
     vector: true,
     serviceSlug: "heavy-haulage",
     specs: [
@@ -246,7 +246,7 @@ export const FLEET = [
     name: "Helicopter Lifting Operations",
     tagline: "When no crane can reach.",
     blurb: "Aerial external-load lifting for remote sites and rooftop installations.",
-    image: "/images/fleet-heli.png",
+    image: "/images/fleet-heli.webp",
     vector: true,
     serviceSlug: "helicopter-lifting",
     specs: [

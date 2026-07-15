@@ -1,11 +1,17 @@
 import React from "react";
 import { MapPin, Phone, Navigation } from "lucide-react";
 import { Reveal, MaskedLines } from "@/components/site/Reveal";
+import Seo from "@/components/site/Seo";
 import { BRAND, SERVICE_AREAS } from "@/lib/site-data";
 
 export default function LocationsPage() {
   return (
     <div className="bg-cream" data-testid="locations-page">
+      <Seo
+        title="Locations — VIC · QLD · SA"
+        description="Direct Cranes depots in Melbourne, Brisbane and Adelaide — crane hire and heavy transport across Victoria, Queensland and South Australia."
+        path="/locations"
+      />
       <section className="pb-10 pt-32 sm:pt-40">
         <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">Where we operate</p>

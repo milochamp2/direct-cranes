@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://direct-cranes-web.vercel.app/sitemap.xml

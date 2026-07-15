@@ -1,4 +1,5 @@
 import React from "react";
+import Seo from "@/components/site/Seo";
 import Hero from "@/components/site/Hero";
 import Marquee from "@/components/site/Marquee";
 import Manifesto from "@/components/site/Manifesto";
@@ -11,6 +12,7 @@ import About from "@/components/site/About";
 export default function Home() {
   return (
     <div data-testid="home-page">
+      <Seo path="/" />
       <Hero />
       <Marquee />
       <Manifesto />

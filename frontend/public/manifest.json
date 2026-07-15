@@ -1,0 +1,13 @@
+{
+  "short_name": "Direct Cranes",
+  "name": "Direct Cranes Hire — Crane Hire & Lifting Solutions",
+  "icons": [
+    { "src": "favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "favicon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "favicon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#16120F",
+  "background_color": "#F2EDE3"
+}

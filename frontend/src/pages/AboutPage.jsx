@@ -1,11 +1,17 @@
 import React from "react";
 import { Phone, Mail, MapPin, Clock, Navigation } from "lucide-react";
 import { Reveal, MaskedLines } from "@/components/site/Reveal";
+import Seo from "@/components/site/Seo";
 import { BRAND, IMG, STATS, VALUES, SERVICE_AREAS } from "@/lib/site-data";
 
 export default function AboutPage() {
   return (
     <div className="bg-cream" data-testid="about-page">
+      <Seo
+        title="About"
+        description="Direct Cranes Hire delivers complete crane hire, lifting and heavy haulage across Melbourne, Brisbane and South Australia — cranes, operators, riggers and coordination under one roof."
+        path="/about"
+      />
       <section className="pb-10 pt-32 sm:pt-40">
         <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">Direct Cranes Hire</p>
