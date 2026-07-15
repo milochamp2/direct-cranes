@@ -5,6 +5,7 @@ import Marquee from "@/components/site/Marquee";
 import Manifesto from "@/components/site/Manifesto";
 import Services from "@/components/site/Services";
 import Fleet from "@/components/site/Fleet";
+import BrandFilm from "@/components/site/BrandFilm";
 import Industries from "@/components/site/Industries";
 import Locations from "@/components/site/Locations";
 import About from "@/components/site/About";
@@ -18,6 +19,7 @@ export default function Home() {
       <Manifesto />
       <Services />
       <Fleet />
+      <BrandFilm />
       <Industries />
       <Locations />
       <About />
