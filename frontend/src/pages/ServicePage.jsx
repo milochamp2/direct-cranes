@@ -34,8 +34,13 @@ export default function ServicePage({ slug }) {
       <section className="border-y-[3px] border-ink bg-obsidian py-14 sm:py-20">
         <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
           <Reveal>
-            <div className="overflow-hidden rounded-3xl border border-flame/30">
-              <img src={service.image} alt={service.title} className="max-h-[70vh] w-full object-cover" data-testid="service-hero-image" />
+            <div className={`overflow-hidden rounded-3xl border border-flame/30 ${service.containImage ? "bg-white" : ""}`}>
+              <img
+                src={service.image}
+                alt={service.title}
+                className={`max-h-[70vh] w-full ${service.containImage ? "object-contain" : "object-cover"}`}
+                data-testid="service-hero-image"
+              />
             </div>
           </Reveal>
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">

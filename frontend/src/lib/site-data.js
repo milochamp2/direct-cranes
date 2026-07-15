@@ -128,7 +128,8 @@ export const SERVICES = [
       { k: "Docs", v: "Full safety pack" },
       { k: "On-site", v: "Supervision" },
     ],
-    image: IMG.stockPlans,
+    image: "/images/lift-plan.jpg",
+    containImage: true,
     machines: [],
   },
 ];
