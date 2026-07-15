@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { FLEET } from "@/lib/site-data";
 
-const featured = FLEET.filter((f) => ["AT-100", "SL-250", "HELI"].includes(f.code));
+const featured = FLEET.filter((f) => ["AT-100", "HT-45", "HELI"].includes(f.code));
 
 export default function Fleet() {
   return (
