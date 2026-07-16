@@ -34,7 +34,7 @@ export default function BrandFilm() {
               <video
                 ref={videoRef}
                 className="aspect-[9/16] w-full rounded-[1.5rem] object-cover"
-                src="/media/brand-showcase.mp4"
+                src="/media/brand-showcase-direct-cranes.mp4"
                 poster="/media/brand-showcase-poster.jpg"
                 autoPlay
                 muted
