@@ -25,6 +25,15 @@ export const BRAND = {
   email: "hire@directcraneshire.com.au",
 };
 
+// Build gallery image + video-reel paths, URL-encoding folder names with spaces.
+const galleryImgs = (folder, files, alt) =>
+  files.map((f) => ({ src: `/images/${encodeURIComponent(folder)}/${encodeURIComponent(f)}`, alt }));
+const reelVids = (folder, bases) =>
+  bases.map((b) => ({
+    src: `/media/${encodeURIComponent(folder)}/${b}.mp4`,
+    poster: `/media/${encodeURIComponent(folder)}/${b}.jpg`,
+  }));
+
 export const SOCIAL = [
   { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100079628052405", icon: "facebook" },
   { label: "Instagram", href: "https://www.instagram.com/directcranes/", icon: "instagram" },
@@ -57,11 +66,18 @@ export const SERVICES = [
       { k: "Setup time", v: "0 – 30 min" },
       { k: "Hire type", v: "Wet · ST & LT" },
     ],
-    image: "/images/crane/crane-1.webp",
-    gallery: [
-      { src: "/images/crane/crane-2.webp", alt: "Direct Cranes all-terrain crane lifting an excavator on site" },
-      { src: "/images/crane/crane-3.webp", alt: "Direct Cranes all-terrain crane on a commercial building lift" },
-    ],
+    image: "/images/cranes%20hero.png",
+    gallery: galleryImgs(
+      "crane",
+      [
+        "crane 1.jpeg", "crane 2.jpg", "crane 3.jpg", "crane 4.jpg", "crane 5.jpg",
+        "crane 6.jpg", "crane 7.jpg", "crane 8.jpg", "crane 9.jpg", "crane 10.jpg",
+        "crane 11.jpg", "crane 12.jpg", "crane 13.jpg", "crane 14.jpg", "crane 15.jpg",
+        "crane 16.jpg", "crane.jpeg", "franna.jpg", "franna 2.jpg", "franna 3.jpg", "mobile.jpg",
+      ],
+      "Direct Cranes mobile crane on the job"
+    ),
+    videos: reelVids("mobile crane vids", ["mc-franna", "mc-1", "mc-2", "mc-3"]),
     machines: ["AT-60", "AT-100", "FR-25", "FR-40"],
   },
   {
@@ -80,7 +96,8 @@ export const SERVICES = [
       { k: "Duration", v: "Long-term" },
       { k: "Jib", v: "Up to 65 m" },
     ],
-    image: IMG.stockAerial,
+    image: "/images/tower%20crane/tc%201.jpg",
+    gallery: galleryImgs("tower crane", ["tc 2.jpg"], "Direct Cranes tower crane on a commercial build"),
     machines: ["TWR-65"],
   },
   {
@@ -99,7 +116,13 @@ export const SERVICES = [
       { k: "Access", v: "Remote / rooftop" },
       { k: "Response", v: "24 / 7" },
     ],
-    image: IMG.helicopter,
+    image: "/images/helicopter%20jpg/helicopter%205.jpg",
+    gallery: galleryImgs(
+      "helicopter jpg",
+      ["helicopter 1.jpg", "helicopter 2.jpg", "helicopter 3.jpg", "helicopter 4.jpg", "hc gary.jpg"],
+      "Direct Cranes helicopter lifting operation"
+    ),
+    videos: reelVids("helicopter vids", ["heli-1", "heli-2", "heli-3", "heli-4", "heli-5", "heli-6"]),
     machines: ["HELI"],
   },
   {
@@ -118,11 +141,15 @@ export const SERVICES = [
       { k: "Loads", v: "Plant & machinery" },
       { k: "Permits", v: "Handled in-house" },
     ],
-    image: "/images/heavy%20haulage/haulage-1.webp",
-    gallery: [
-      { src: "/images/heavy%20haulage/haulage-2.webp", alt: "Direct Cranes prime mover and all-terrain crane at a construction site" },
-      { src: "/images/heavy%20haulage/haulage-3.webp", alt: "Crawler crane loaded on a low-loader at the depot at night" },
-    ],
+    image: "/images/heavy%20haulage/heavy%20haulage%204.jpg",
+    gallery: galleryImgs(
+      "heavy haulage",
+      [
+        "heavy haulage 1.jpg", "heavy haulage 2.jpg", "heavy haulage 5.jpg",
+        "heavy haulage 6.jpg", "heavy haulage.jpg",
+      ],
+      "Direct Cranes heavy haulage and transport"
+    ),
     machines: ["HT-45"],
   },
   {
@@ -141,7 +168,7 @@ export const SERVICES = [
       { k: "Docs", v: "Full safety pack" },
       { k: "On-site", v: "Supervision" },
     ],
-    image: "/images/lift%20plan/lift-plan.webp",
+    image: "/images/lift%20plan/lift-plan.jpg",
     containImage: true,
     machines: [],
   },
@@ -153,7 +180,7 @@ export const FLEET = [
     name: "100T All-Terrain Crane",
     tagline: "Power. Precision. Performance.",
     blurb: "Built for the most demanding lifts with superior reach, control and stability.",
-    image: "/images/fleet%20mobile%20cranes/fleet-at-100.webp",
+    image: "/images/fleet%20mobile%20cranes/fleet-at-100.png",
     vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
@@ -172,7 +199,7 @@ export const FLEET = [
     name: "60T All-Terrain Crane",
     tagline: "Compact power, city-legal reach.",
     blurb: "A nimble 60T all-terrain — quick to rig and road-legal, ideal for tight urban lifts and general construction.",
-    image: "/images/fleet%20mobile%20cranes/fleet-at-60.webp",
+    image: "/images/fleet%20mobile%20cranes/fleet-at-60.png",
     vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
@@ -191,7 +218,7 @@ export const FLEET = [
     name: "Franna 25T Pick-and-Carry Crane",
     tagline: "No setup. No fuss. Just lift.",
     blurb: "The tight-access workhorse — picks the load and carries it anywhere on site.",
-    image: "/images/fleet%20mobile%20cranes/fleet-franna-25.webp",
+    image: "/images/fleet%20mobile%20cranes/fleet-franna-25.png",
     vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
@@ -208,7 +235,7 @@ export const FLEET = [
     name: "Franna 40T Pick-and-Carry Crane",
     tagline: "More pick, same no-fuss carry.",
     blurb: "The big-brother Franna — 40T of pick-and-carry capacity for heavier tight-access work with zero setup.",
-    image: "/images/fleet%20mobile%20cranes/fleet-franna-40.webp",
+    image: "/images/fleet%20mobile%20cranes/fleet-franna-40.png",
     vector: true,
     serviceSlug: "mobile-cranes",
     specs: [
@@ -242,7 +269,7 @@ export const FLEET = [
     name: "Crawler Crane Transport / Low-Loader Haulage",
     tagline: "The load behind the lift.",
     blurb: "Low-loader haulage for crawler cranes and heavy plant — semi-trailers, counterweight trucks and full route coordination.",
-    image: "/images/fleet%20heavy%20haulage/fleet-crawler.webp",
+    image: "/images/fleet%20heavy%20haulage/fleet-crawler.png",
     vector: true,
     serviceSlug: "heavy-haulage",
     specs: [
@@ -259,7 +286,7 @@ export const FLEET = [
     name: "Helicopter Lifting Operations",
     tagline: "When no crane can reach.",
     blurb: "Aerial external-load lifting for remote sites and rooftop installations.",
-    image: "/images/fleet%20helicopter/fleet-heli.webp",
+    image: "/images/fleet%20helicopter/fleet-heli.png",
     vector: true,
     serviceSlug: "helicopter-lifting",
     specs: [

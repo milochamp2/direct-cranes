@@ -11,9 +11,9 @@ export default function Hero() {
       {/* Illustration background + black transparency overlay (portrait art on mobile) */}
       <div className="absolute inset-0 z-0" data-testid="hero-bg">
         <picture>
-          <source media="(max-width: 640px)" srcSet="/images/hero%20bg%20mobile/hero-bg-mobile.webp" />
+          <source media="(max-width: 640px)" srcSet="/images/hero%20bg%20mobile/hero-bg-mobile.jpg" />
           <img
-            src="/images/hero%20bg%20desktop/hero-bg.webp"
+            src="/images/hero%20bg%20desktop/hero-bg.jpg"
             alt="Direct Cranes 100T all-terrain crane on a coastal highway at sunset"
             className="h-full w-full object-cover object-center"
             fetchpriority="high"

@@ -111,6 +111,38 @@ export default function ServicePage({ slug }) {
         </section>
       )}
 
+      {/* Video reel showcase */}
+      {service.videos && service.videos.length > 0 && (
+        <section className="border-y-[3px] border-ink bg-obsidian py-20 sm:py-24" data-testid="service-videos">
+          <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
+            <Reveal>
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">Watch</p>
+              <h2 className="mt-3 font-display text-3xl font-black text-cream sm:text-5xl">
+                On <span className="text-flame">the job.</span>
+              </h2>
+            </Reveal>
+            <div className="mt-12 flex snap-x gap-5 overflow-x-auto pb-4">
+              {service.videos.map((v, i) => (
+                <div key={v.src} className="shrink-0 snap-start">
+                  <Reveal delay={(i % 4) * 0.06}>
+                    <div className="glass-panel glass-sheen w-[240px] overflow-hidden rounded-[1.5rem] p-1.5 sm:w-[280px]">
+                      <video
+                        className="aspect-[9/16] w-full rounded-[1.2rem] bg-black object-cover"
+                        src={v.src}
+                        poster={v.poster}
+                        controls
+                        playsInline
+                        preload="none"
+                      />
+                    </div>
+                  </Reveal>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Real-job photo gallery */}
       {service.gallery && service.gallery.length > 0 && (
         <section className="border-y-[3px] border-ink bg-obsidian py-20 sm:py-24" data-testid="service-gallery">
