@@ -4,6 +4,7 @@ import { Phone, Check, ArrowLeft, ArrowRight, Cpu, Boxes, Building2, ShieldCheck
 import { Reveal, MaskedLines } from "@/components/site/Reveal";
 import Seo from "@/components/site/Seo";
 import SpecSheet from "@/components/site/SpecSheet";
+import GallerySlider from "@/components/site/GallerySlider";
 import { BRAND, SERVICES, FLEET } from "@/lib/site-data";
 
 const WHY_ICONS = { cpu: Cpu, boxes: Boxes, building: Building2, shield: ShieldCheck, map: MapPin, zap: Zap };
@@ -292,16 +293,10 @@ export default function ServicePage({ slug }) {
                 Real <span className="text-flame">jobs.</span>
               </h2>
             </Reveal>
-            <div className="mt-12 columns-1 gap-4 sm:columns-2 lg:columns-3">
-              {service.gallery.map((g, i) => (
-                <div key={g.src} className="mb-4 break-inside-avoid">
-                  <Reveal delay={(i % 3) * 0.08}>
-                    <div className="glass-panel glass-sheen overflow-hidden rounded-2xl p-1.5">
-                      <img src={g.src} alt={g.alt} loading="lazy" className="w-full rounded-xl object-cover" />
-                    </div>
-                  </Reveal>
-                </div>
-              ))}
+            <div className="mt-12">
+              <Reveal>
+                <GallerySlider items={service.gallery} />
+              </Reveal>
             </div>
           </div>
         </section>
