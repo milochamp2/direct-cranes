@@ -92,6 +92,65 @@ export default function ServicePage({ slug }) {
         </div>
       </section>
 
+      {/* Deliverable tiers (lift studies) */}
+      {service.tiers && service.tiers.length > 0 && (
+        <section className="border-y-[3px] border-ink bg-obsidian py-20 sm:py-24" data-testid="service-tiers">
+          <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
+            <Reveal>
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">How we plan</p>
+              <h2 className="mt-3 font-display text-3xl font-black text-cream sm:text-5xl">
+                From plan to <span className="text-flame">engineered.</span>
+              </h2>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-cream/60 sm:text-base">
+                Every job gets the right level of documentation — from a straightforward lift plan to a fully
+                engineered, software-verified study.
+              </p>
+            </Reveal>
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {service.tiers.map((t, i) => (
+                <Reveal key={t.name} delay={i * 0.08}>
+                  <div className="glass-panel glass-sheen glass-hover h-full rounded-2xl p-6" data-testid={`tier-${i}`}>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-flame">0{i + 1}</p>
+                    <h3 className="mt-4 font-display text-xl font-black text-cream">{t.name}</h3>
+                    <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.15em] text-cream/50">{t.tag}</p>
+                    <p className="mt-4 text-sm leading-relaxed text-cream/70">{t.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Key considerations (lift studies) */}
+      {service.considerations && service.considerations.length > 0 && (
+        <section className="relative overflow-hidden bg-paper py-20 sm:py-24" data-testid="service-considerations">
+          <div aria-hidden className="pointer-events-none absolute inset-0">
+            <div className="absolute -right-16 top-1/4 h-80 w-80 rounded-full bg-flame/12 blur-3xl" />
+          </div>
+          <div className="relative z-10 mx-auto max-w-[1600px] px-5 sm:px-10">
+            <Reveal>
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">Every study accounts for</p>
+              <h2 className="mt-3 max-w-2xl font-display text-3xl font-black leading-[0.95] text-ink sm:text-5xl">
+                The detail behind a <span className="text-stroke-flame">safe lift.</span>
+              </h2>
+            </Reveal>
+            <div className="mt-12 grid gap-x-10 gap-y-1 sm:grid-cols-2">
+              {service.considerations.map((c, i) => (
+                <Reveal key={c} delay={(i % 2) * 0.06}>
+                  <div className="flex items-start gap-3 border-b border-ink/10 py-4">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-flame text-cream">
+                      <Check size={13} strokeWidth={3} />
+                    </span>
+                    <span className="text-sm font-semibold text-ink sm:text-base">{c}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Machine spec sheets */}
       {machines.length > 0 && (
         <section className="border-y-[3px] border-ink bg-obsidian py-20 sm:py-24" data-testid="service-machines">
