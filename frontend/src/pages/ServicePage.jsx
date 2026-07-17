@@ -1,10 +1,12 @@
 import React from "react";
 import { Link, Navigate } from "react-router-dom";
-import { Phone, Check, ArrowLeft, ArrowRight } from "lucide-react";
+import { Phone, Check, ArrowLeft, ArrowRight, Cpu, Boxes, Building2, ShieldCheck, MapPin, Zap } from "lucide-react";
 import { Reveal, MaskedLines } from "@/components/site/Reveal";
 import Seo from "@/components/site/Seo";
 import SpecSheet from "@/components/site/SpecSheet";
 import { BRAND, SERVICES, FLEET } from "@/lib/site-data";
+
+const WHY_ICONS = { cpu: Cpu, boxes: Boxes, building: Building2, shield: ShieldCheck, map: MapPin, zap: Zap };
 
 export default function ServicePage({ slug }) {
   const idx = SERVICES.findIndex((s) => s.slug === slug);
@@ -18,16 +20,27 @@ export default function ServicePage({ slug }) {
     <div key={slug} data-testid={`service-page-${slug}`}>
       <Seo title={service.title} description={service.short} path={`/${slug}`} />
       {/* Header */}
-      <section className="bg-cream pb-16 pt-32 sm:pt-40">
-        <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
+      <section className={`relative overflow-hidden pb-16 pt-32 sm:pt-40 ${service.headerImage ? "" : "bg-cream"}`}>
+        {service.headerImage && (
+          <div aria-hidden className="absolute inset-0 z-0" data-testid="service-header-bg">
+            <img src={service.headerImage} alt="" className="h-full w-full object-cover object-center" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-obsidian" />
+          </div>
+        )}
+        <div className="relative z-10 mx-auto max-w-[1600px] px-5 sm:px-10">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame" data-testid="service-breadcrumb">
             Direct Cranes / Chapter {service.chapter}
           </p>
-          <h1 className="mt-4 font-display font-black leading-[0.9] tracking-tight text-ink" data-testid="service-title">
+          <h1
+            className={`mt-4 font-display font-black leading-[0.9] tracking-tight ${service.headerImage ? "text-cream" : "text-ink"}`}
+            data-testid="service-title"
+          >
             <MaskedLines lines={[service.title]} lineClassName="text-4xl sm:text-6xl lg:text-7xl" start={0.1} />
           </h1>
           <Reveal delay={0.25}>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink/75 sm:text-lg">{service.lede}</p>
+            <p className={`mt-6 max-w-2xl text-base leading-relaxed sm:text-lg ${service.headerImage ? "text-cream/80" : "text-ink/75"}`}>
+              {service.lede}
+            </p>
           </Reveal>
         </div>
       </section>
@@ -143,6 +156,73 @@ export default function ServicePage({ slug }) {
                       <Check size={13} strokeWidth={3} />
                     </span>
                     <span className="text-sm font-semibold text-ink sm:text-base">{c}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Why choose (lift studies) */}
+      {service.whyChoose && service.whyChoose.length > 0 && (
+        <section className="border-y-[3px] border-ink bg-obsidian py-20 sm:py-24" data-testid="service-why">
+          <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
+            <Reveal>
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">Why Direct Cranes</p>
+              <h2 className="mt-3 max-w-3xl font-display text-3xl font-black text-cream sm:text-5xl">
+                Why choose us for <span className="text-flame">3D lift planning.</span>
+              </h2>
+            </Reveal>
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {service.whyChoose.map((w, i) => {
+                const Icon = WHY_ICONS[w.icon] || Check;
+                return (
+                  <Reveal key={w.title} delay={(i % 3) * 0.08}>
+                    <div className="glass-panel glass-sheen h-full rounded-2xl p-6" data-testid={`why-${i}`}>
+                      <span className="flex h-11 w-11 items-center justify-center rounded-full bg-flame text-cream">
+                        <Icon size={18} />
+                      </span>
+                      <h3 className="mt-5 font-display text-lg font-black text-cream">{w.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-cream/70">{w.desc}</p>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Featured projects (lift studies) */}
+      {service.projects && service.projects.length > 0 && (
+        <section className="relative overflow-hidden bg-cream py-20 sm:py-24" data-testid="service-projects">
+          <div aria-hidden className="pointer-events-none absolute inset-0">
+            <div className="absolute left-1/4 top-10 h-80 w-80 -translate-x-1/2 rounded-full bg-flame/10 blur-3xl" />
+          </div>
+          <div className="relative z-10 mx-auto max-w-[1600px] px-5 sm:px-10">
+            <Reveal>
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">Featured projects</p>
+              <h2 className="mt-3 font-display text-3xl font-black text-ink sm:text-5xl">
+                Planned, lifted, <span className="text-stroke-flame">delivered.</span>
+              </h2>
+            </Reveal>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {service.projects.map((pr, i) => (
+                <Reveal key={pr.title} delay={i * 0.1}>
+                  <div className="glass-light glass-sheen group h-full overflow-hidden rounded-3xl" data-testid={`project-${i}`}>
+                    <div className="overflow-hidden">
+                      <img
+                        src={pr.img}
+                        alt={pr.title}
+                        loading="lazy"
+                        className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-display text-xl font-black text-ink">{pr.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-ink/70">{pr.desc}</p>
+                    </div>
                   </div>
                 </Reveal>
               ))}
