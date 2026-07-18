@@ -232,6 +232,41 @@ export default function ServicePage({ slug }) {
         </section>
       )}
 
+      {/* Completed projects list (tower cranes) */}
+      {service.projectList && service.projectList.length > 0 && (
+        <section className="border-y-[3px] border-ink bg-obsidian py-20 sm:py-24" data-testid="service-projectlist">
+          <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
+            <Reveal>
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">Track record</p>
+              <h2 className="mt-3 font-display text-3xl font-black text-cream sm:text-5xl">
+                Completed <span className="text-flame">projects.</span>
+              </h2>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-cream/60 sm:text-base">
+                Tower cranes supplied and supported on major commercial builds across Melbourne.
+              </p>
+            </Reveal>
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {service.projectList.map((pr, i) => (
+                <Reveal key={pr.name} delay={(i % 3) * 0.07}>
+                  <div className="glass-panel glass-sheen glass-hover flex h-full flex-col justify-between rounded-2xl p-6" data-testid={`plist-${i}`}>
+                    <div>
+                      <h3 className="font-display text-xl font-black leading-tight text-cream">{pr.name}</h3>
+                      {pr.builder && (
+                        <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.18em] text-cream/50">{pr.builder}</p>
+                      )}
+                    </div>
+                    <p className="mt-6 font-display text-3xl font-black text-flame">
+                      {pr.value}
+                      <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.18em] text-cream/40">project value</span>
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Machine spec sheets */}
       {machines.length > 0 && (
         <section className="border-y-[3px] border-ink bg-obsidian py-20 sm:py-24" data-testid="service-machines">

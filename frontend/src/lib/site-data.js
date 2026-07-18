@@ -54,15 +54,15 @@ export const SERVICES = [
     slug: "mobile-cranes",
     chapter: "01",
     title: "Mobile Cranes",
-    short: "All-terrain cranes to 100T plus 25T and 40T Frannas — wet hire with certified crews.",
-    lede: "From tight-access 25T and 40T Frannas to 60T and 100T all-terrains — road-legal machines supplied wet with experienced operators, dogmen and riggers.",
+    short: "All-terrain cranes to 250T plus 25T and 40T Frannas — wet hire with certified crews.",
+    lede: "From tight-access 25T and 40T Frannas to 60T, 100T and 250T all-terrains — road-legal machines supplied wet with experienced operators, dogmen and riggers.",
     body: [
-      "Our mobile fleet covers every lift. Frannas pick and carry through tight yards with zero setup. All-terrains arrive, rig in under 30 minutes and get your load in the air the same day — 60T and 100T machines with luffing jibs, fly and full engineering behind every pick.",
+      "Our mobile fleet covers every lift. Frannas pick and carry through tight yards with zero setup. All-terrains arrive, rig fast and get your load in the air the same day — 60T to 250T machines with luffing jibs, fly and full engineering behind every pick.",
       "Every hire includes a certified operator and rigging crew, site inspection, SWMS and lift plans. Short-term lifts or long-term project hire — one call, one company, complete lift.",
     ],
-    capabilities: ["All-terrain cranes 60T & 100T", "25T & 40T Franna pick & carry", "Tight-access urban lifts", "Wet hire — operator, dogman, rigger", "Same-day & emergency mobilisation", "Multi-crane tandem lifts"],
+    capabilities: ["All-terrain cranes 60T – 250T", "25T & 40T Franna pick & carry", "Tight-access urban lifts", "Wet hire — operator, dogman, rigger", "Same-day & emergency mobilisation", "Multi-crane tandem lifts"],
     specs: [
-      { k: "Range", v: "25T – 100T" },
+      { k: "Range", v: "25T – 250T" },
       { k: "Setup time", v: "0 – 30 min" },
       { k: "Hire type", v: "Wet · ST & LT" },
     ],
@@ -78,7 +78,7 @@ export const SERVICES = [
       "Direct Cranes mobile crane on the job"
     ),
     videos: reelVids("mobile crane vids", ["mc-franna", "mc-1", "mc-2", "mc-3"]),
-    machines: ["AT-60", "AT-100", "FR-25", "FR-40"],
+    machines: ["AT-250", "AT-100", "AT-60", "FR-25", "FR-40"],
   },
   {
     slug: "tower-cranes",
@@ -98,6 +98,15 @@ export const SERVICES = [
     ],
     image: "/images/tower%20crane/tc%201.jpg",
     gallery: galleryImgs("tower crane", ["tc 2.jpg"], "Direct Cranes tower crane on a commercial build"),
+    projectList: [
+      { name: "Arc 3, Molesworth Place", builder: "", value: "$60M+" },
+      { name: "Yarra Valley Grammar", builder: "Kapitol", value: "$30M" },
+      { name: "St Aloysius", builder: "Build Engineering", value: "$30M" },
+      { name: "Ivanhoe Grammar", builder: "Build Engineering", value: "$25M" },
+      { name: "Timeless", builder: "Balmain & Co", value: "$20M" },
+      { name: "Nelson Street", builder: "Balmain & Co", value: "$20M" },
+      { name: "Heirloom", builder: "Balmain & Co", value: "$15M" },
+    ],
     machines: ["TWR-65"],
   },
   {
@@ -204,6 +213,25 @@ export const SERVICES = [
 ];
 
 export const FLEET = [
+  {
+    code: "AT-250",
+    name: "250T All-Terrain Crane",
+    tagline: "The flagship. Pro-grade to 250T.",
+    blurb: "Our biggest all-terrain — 250 tonnes of road-legal lifting with long boom, luffing jib and full engineering behind every pick.",
+    image: "/images/fleet%20mobile%20cranes/fleet-liebherr-250t.png",
+    vector: true,
+    serviceSlug: "mobile-cranes",
+    specs: [
+      { icon: "hook", label: "Max lift capacity", value: "250", unit: "tonnes" },
+      { icon: "boom", label: "Main boom length", value: "60", unit: "metres" },
+      { icon: "height", label: "Max tip height", value: "108+", unit: "metres" },
+      { icon: "radius", label: "Max working radius", value: "78", unit: "metres" },
+      { icon: "jib", label: "Luffing jib", value: "to 50", unit: "metres" },
+      { icon: "axle", label: "Axles", value: "5 × 10", unit: "drive" },
+      { icon: "weight", label: "Counterweight", value: "88", unit: "tonnes" },
+      { icon: "timer", label: "Setup time", value: "45–60", unit: "min" },
+    ],
+  },
   {
     code: "AT-100",
     name: "100T All-Terrain Crane",
