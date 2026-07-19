@@ -66,13 +66,13 @@ export const SERVICES = [
       { k: "Setup time", v: "0 – 30 min" },
       { k: "Hire type", v: "Wet · ST & LT" },
     ],
-    image: "/images/cranes%20hero.png",
+    image: "/images/crane/crane%2013.jpg",
     gallery: galleryImgs(
       "crane",
       [
         "crane 1.jpeg", "crane 2.jpg", "crane 3.jpg", "crane 4.jpg", "crane 5.jpg",
         "crane 6.jpg", "crane 7.jpg", "crane 8.jpg", "crane 9.jpg", "crane 10.jpg",
-        "crane 11.jpg", "crane 12.jpg", "crane 13.jpg", "crane 14.jpg", "crane 15.jpg",
+        "crane 11.jpg", "crane 12.jpg", "crane 14.jpg", "crane 15.jpg",
         "crane 16.jpg", "crane.jpeg", "franna.jpg", "franna 2.jpg", "franna 3.jpg", "mobile.jpg",
       ],
       "Direct Cranes mobile crane on the job"
@@ -96,8 +96,8 @@ export const SERVICES = [
       { k: "Duration", v: "Long-term" },
       { k: "Jib", v: "Up to 65 m" },
     ],
-    image: "/images/tower%20crane/tc%201.jpg",
-    gallery: galleryImgs("tower crane", ["tc 2.jpg"], "Direct Cranes tower crane on a commercial build"),
+    image: "/images/tower%20crane/tc%202.jpg",
+    gallery: galleryImgs("tower crane", ["tc 1.jpg"], "Direct Cranes tower crane on a commercial build"),
     projectList: [
       { name: "Arc 3, Molesworth Place", builder: "", value: "$60M+" },
       { name: "Yarra Valley Grammar", builder: "Kapitol", value: "$30M" },
@@ -150,12 +150,12 @@ export const SERVICES = [
       { k: "Loads", v: "Plant & machinery" },
       { k: "Permits", v: "Handled in-house" },
     ],
-    image: "/images/heavy%20haulage/heavy%20haulage%204.jpg",
+    image: "/images/heavy%20haulage/heavy%20haulage%208.jpg",
     gallery: galleryImgs(
       "heavy haulage",
       [
-        "heavy haulage 1.jpg", "heavy haulage 2.jpg", "heavy haulage 5.jpg",
-        "heavy haulage 6.jpg", "heavy haulage.jpg",
+        "heavy haulage 1.jpg", "heavy haulage 2.jpg", "heavy haulage 4.jpg",
+        "heavy haulage 5.jpg", "heavy haulage 6.jpg", "heavy haulage.jpg",
       ],
       "Direct Cranes heavy haulage and transport"
     ),
