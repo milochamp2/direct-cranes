@@ -20,14 +20,18 @@ export const BRAND = {
   name: "DIRECT",
   full: "DIRECT CRANES HIRE",
   tagline: "Complete crane hire & lifting solutions",
-  phone: "1300 272 637",
-  phoneHref: "tel:1300272637",
-  email: "hire@directcraneshire.com.au",
+  phone: "+61 439 371 234",
+  phoneHref: "tel:+61439371234",
+  email: "Operations@directcranes.com.au",
 };
 
 // Build gallery image + video-reel paths, URL-encoding folder names with spaces.
 const galleryImgs = (folder, files, alt) =>
-  files.map((f) => ({ src: `/images/${encodeURIComponent(folder)}/${encodeURIComponent(f)}`, alt }));
+  files.map((f) => ({
+    src: `/images/${encodeURIComponent(folder)}/${encodeURIComponent(f)}`,
+    thumb: `/images/${encodeURIComponent(folder)}/thumbs/${encodeURIComponent(f)}`,
+    alt,
+  }));
 const reelVids = (folder, bases) =>
   bases.map((b) => ({
     src: `/media/${encodeURIComponent(folder)}/${b}.mp4`,
@@ -37,6 +41,7 @@ const reelVids = (folder, bases) =>
 export const SOCIAL = [
   { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100079628052405", icon: "facebook" },
   { label: "Instagram", href: "https://www.instagram.com/directcranes/", icon: "instagram" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/gary-sheppard-0940bb185/", icon: "linkedin" },
 ];
 
 export const NAV_LINKS = [
@@ -208,6 +213,14 @@ export const SERVICES = [
     ],
     image: "/images/lift%20plan/lift-plan.jpg",
     containImage: true,
+    galleryKicker: "Software-verified",
+    galleryTitle: "The plans behind the",
+    galleryAccent: "pick.",
+    gallery: galleryImgs(
+      "lift plan",
+      ["lift-plan.jpg", "lift-plan 2.jpg", "lift-plan 3.jpg"],
+      "Direct Cranes Liebherr Liccon lift study output"
+    ),
     machines: [],
   },
 ];

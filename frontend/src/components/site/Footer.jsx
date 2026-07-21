@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Instagram } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { BRAND, SERVICES, SERVICE_AREAS, SOCIAL } from "@/lib/site-data";
 
-const SOCIAL_ICONS = { facebook: Facebook, instagram: Instagram };
+const SOCIAL_ICONS = { facebook: Facebook, instagram: Instagram, linkedin: Linkedin };
 
 export default function Footer() {
   return (

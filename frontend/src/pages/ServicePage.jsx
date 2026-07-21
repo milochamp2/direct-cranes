@@ -323,9 +323,19 @@ export default function ServicePage({ slug }) {
         <section className="border-y-[3px] border-ink bg-obsidian py-20 sm:py-24" data-testid="service-gallery">
           <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
             <Reveal>
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">On the road</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">
+                {service.galleryKicker || "On the road"}
+              </p>
               <h2 className="mt-3 font-display text-3xl font-black text-cream sm:text-5xl">
-                Real <span className="text-flame">jobs.</span>
+                {service.galleryTitle ? (
+                  <>
+                    {service.galleryTitle} <span className="text-flame">{service.galleryAccent}</span>
+                  </>
+                ) : (
+                  <>
+                    Real <span className="text-flame">jobs.</span>
+                  </>
+                )}
               </h2>
             </Reveal>
             <div className="mt-12">
