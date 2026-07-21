@@ -51,6 +51,7 @@ export default function GallerySlider({ items }) {
                   src={g.src}
                   alt={g.alt}
                   loading={i < 2 ? "eager" : "lazy"}
+                  decoding="async"
                   className="h-full w-full object-contain"
                 />
               </div>
@@ -98,7 +99,7 @@ export default function GallerySlider({ items }) {
             }`}
             data-testid={`gallery-thumb-${i}`}
           >
-            <img src={g.src} alt="" loading="lazy" className="h-full w-full object-cover" />
+            <img src={g.thumb || g.src} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
           </button>
         ))}
       </div>
