@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-const SITE = "https://direct-cranes-web.vercel.app";
+const SITE = "https://directcranes.au";
 const DEFAULT_DESC =
   "Complete crane hire & lifting solutions across Melbourne, Brisbane and South Australia — Frannas, all-terrains, crawlers, tower cranes, heavy haulage and helicopter lifting.";
 
