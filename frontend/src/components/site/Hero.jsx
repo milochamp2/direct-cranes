@@ -11,16 +11,16 @@ export default function Hero() {
       {/* Illustration background + black transparency overlay (portrait art on mobile) */}
       <div className="absolute inset-0 z-0" data-testid="hero-bg">
         <picture>
-          <source media="(max-width: 640px)" srcSet="/images/sky%20crane/sky-crane-hero-mobile.jpg" />
+          <source media="(max-width: 640px)" srcSet="/images/hero%20bg%20mobile/hero-bg-mobile.jpg" />
           <img
-            src="/images/sky%20crane/sky-crane-hero.jpg"
-            alt="Sky crane heavy-lift helicopter in flight"
+            src="/images/hero%20bg%20desktop/hero-bg.jpg"
+            alt="Direct Cranes all-terrain crane on a coastal highway at sunset with a sky crane and telecom tower"
             className="h-full w-full object-cover object-center"
             fetchpriority="high"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-black/5 sm:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-black/5 sm:to-black/10" />
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] max-w-[1600px] flex-col justify-center px-5 pb-14 sm:px-10">
