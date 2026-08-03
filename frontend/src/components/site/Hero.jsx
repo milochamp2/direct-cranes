@@ -11,9 +11,9 @@ export default function Hero() {
       {/* Illustration background + black transparency overlay (portrait art on mobile) */}
       <div className="absolute inset-0 z-0" data-testid="hero-bg">
         <picture>
-          <source media="(max-width: 640px)" srcSet="/images/hero%20bg%20mobile/directcranes-bg-hero-updated-mobile.jpg" />
+          <source media="(max-width: 640px)" srcSet="/images/hero%20bg%20mobile/directcranes-hero-updated-bg-mobile.jpg" />
           <img
-            src="/images/hero%20bg%20desktop/directcranes-bg-hero-updated.jpg"
+            src="/images/hero%20bg%20desktop/directcranes-hero-updated-bg.jpg"
             alt="Direct Cranes all-terrain crane on a coastal highway at sunset with a sky crane and telecom tower"
             className="h-full w-full object-cover object-center"
             fetchpriority="high"
