@@ -11,6 +11,7 @@ import Home from "@/pages/Home";
 import ServicePage from "@/pages/ServicePage";
 import LocationsPage from "@/pages/LocationsPage";
 import AboutPage from "@/pages/AboutPage";
+import DirectSteelPage from "@/pages/DirectSteelPage";
 import { SERVICES } from "@/lib/site-data";
 
 function ScrollProgress() {
@@ -68,6 +69,7 @@ function AnimatedRoutes() {
             {SERVICES.map((s) => (
               <Route key={s.slug} path={`/${s.slug}`} element={<ServicePage slug={s.slug} />} />
             ))}
+            <Route path="/direct-steel-solutions" element={<DirectSteelPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />

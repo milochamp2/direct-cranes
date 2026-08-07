@@ -50,6 +50,7 @@ export const NAV_LINKS = [
   { label: "Helicopter Lifting", to: "/helicopter-lifting" },
   { label: "Heavy Haulage", to: "/heavy-haulage" },
   { label: "Lift Studies", to: "/lift-studies" },
+  { label: "Direct Steel", to: "/direct-steel-solutions" },
   { label: "Locations", to: "/locations" },
   { label: "About Us", to: "/about" },
 ];
@@ -224,6 +225,76 @@ export const SERVICES = [
     machines: [],
   },
 ];
+
+// Direct Steel Solutions — a division of Direct Cranes. Capability statement content.
+export const STEEL = {
+  kicker: "Capability Statement",
+  regions: "Melbourne · Regional Victoria · Australia-wide support",
+  disciplines: ["Engineering", "Supply", "Fabrication", "Installation"],
+  lede: "Complete structural steel delivery backed by Direct Cranes — engineering, procurement, fabrication, transport, cranes, rigging and installation under one coordinated team.",
+  hero: "/images/hero%20bg%20desktop/hero-bg-updated-desktop.jpg",
+  intro: {
+    sub: "From steel supply through to crane-assisted installation.",
+    body: "Direct Steel Solutions delivers structural steel packages from initial coordination through to site completion. Our team manages engineering, procurement, fabrication, transport, cranes, rigging and installation.",
+    backedTitle: "Supported by Direct Cranes",
+    backed: "Our in-house lifting capability brings the crane, transport and rigging teams into the project early — reducing handovers and improving site coordination.",
+    partnerTag: "Steel supply partner",
+    partnerName: "Auspro Steel Pty Ltd",
+    partnerDesc: "Supporting structural steel supply and procurement for Direct Steel Solutions projects.",
+  },
+  service: [
+    { title: "Engineering", desc: "Engineering coordination, shop drawings and steel detailing." },
+    { title: "Steel Supply", desc: "Procurement through Auspro Steel Pty Ltd and approved suppliers." },
+    { title: "Fabrication", desc: "Cutting, drilling, welding, assembly and quality checks." },
+    { title: "Delivery", desc: "Planned transport, sequencing and coordinated site arrival." },
+    { title: "Crane & Rigging", desc: "Lift planning, cranes, dogmen, riggers and safe placement." },
+    { title: "Installation", desc: "Structural steel erection, alignment and completion support." },
+  ],
+  process: [
+    { n: "01", title: "Review", desc: "Scope, drawings, access and program." },
+    { n: "02", title: "Engineer", desc: "Certification, calculations and connection design." },
+    { n: "03", title: "Detail", desc: "Shop drawings, modelling and fabrication data." },
+    { n: "04", title: "Supply", desc: "Steel procurement through Auspro Steel." },
+    { n: "05", title: "Fabricate", desc: "Cut, drill, weld, assemble and inspect." },
+    { n: "06", title: "Deliver", desc: "Transport planning and delivery sequencing." },
+    { n: "07", title: "Install", desc: "Crane lifts, rigging, erection and alignment." },
+    { n: "08", title: "Complete", desc: "QA records, engineering sign-off and handover." },
+  ],
+  supply: ["Structural sections", "Plate and connection material", "Custom project requirements", "Coordinated delivery sequencing"],
+  fabrication: ["CNC plate processing", "Cutting, drilling and punching", "Welding and assembly", "Trial fit and quality checks", "Surface treatment coordination", "Fabrication documentation"],
+  supplyImage: "/images/steel/supply-fabrication.jpg",
+  cranes: {
+    fleet: ["Mobile cranes", "Franna cranes", "Slew cranes"],
+    site: ["Lift planning", "Traffic management", "Site coordination"],
+    install: ["Licensed riggers", "Dogmen", "Controlled placement"],
+    images: ["/images/steel/crane-franna.jpg", "/images/steel/crane-slew.jpg"],
+  },
+  safety: {
+    delivery: ["SWMS and safe work procedures", "Job Safety Analysis", "Lift studies and crane lift plans", "Engineering certification", "Weld procedures and qualifications"],
+    quality: ["Material traceability", "Quality documentation", "Licensed riggers and dogmen", "Site inductions and compliance", "Final QA and handover records"],
+    image: "/images/steel/crane-outrigger.jpg",
+  },
+  projects: [
+    { img: "/images/steel/project-structural.jpg", title: "Structural Support", desc: "Supply, coordination and installation delivered as part of the project package." },
+    { img: "/images/steel/project-frame.jpg", title: "Frame Integration", desc: "Supply, coordination and installation delivered as part of the project package." },
+    { img: "/images/steel/project-crane-install.jpg", title: "Crane-Assisted Install", desc: "Supply, coordination and installation delivered as part of the project package." },
+    { img: "/images/steel/project-fitout.jpg", title: "Commercial Fitout", desc: "Supply, coordination and installation delivered as part of the project package." },
+  ],
+  industries: [
+    "Commercial Construction", "Industrial", "Residential Construction", "Warehousing & Logistics",
+    "Manufacturing", "Government & Councils", "Infrastructure", "Healthcare",
+    "Education", "Retail", "Telecommunications", "Sports & Recreation",
+  ],
+  contact: {
+    name: "Jarrod Bayliss",
+    role: "Direct Cranes / Direct Steel Solutions",
+    phone: "0409 732 117",
+    phoneHref: "tel:0409732117",
+    email: "Jarrod@directcranes.au",
+    emailHref: "mailto:Jarrod@directcranes.au",
+    site: "directcranes.au",
+  },
+};
 
 export const FLEET = [
   {

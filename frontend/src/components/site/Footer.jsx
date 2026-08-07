@@ -45,6 +45,9 @@ export default function Footer() {
                   {s.title}
                 </Link>
               ))}
+              <Link to="/direct-steel-solutions" className="text-sm text-cream/70 transition-colors hover:text-flame" data-testid="footer-service-direct-steel">
+                Direct Steel Solutions
+              </Link>
             </div>
           </div>
           <div className="lg:col-span-3">
