@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, Check, ArrowUpRight, Globe } from "lucide-react";
+import { Phone, Mail, Check, ArrowUpRight, Globe, Download } from "lucide-react";
 import { Reveal, MaskedLines } from "@/components/site/Reveal";
 import Seo from "@/components/site/Seo";
 import { STEEL } from "@/lib/site-data";
@@ -28,7 +28,7 @@ export default function DirectSteelPage() {
     <div data-testid="direct-steel-page">
       <Seo
         title="Direct Steel Solutions"
-        description="Direct Steel Solutions — a division of Direct Cranes. Structural steel engineering, supply, fabrication, cranes, rigging and installation across Melbourne, regional Victoria and Australia-wide."
+        description="Direct Steel Solutions — a division of Direct Cranes. Structural steel engineering, detailing, in-house supply and fabrication, cranes, rigging and installation across Melbourne, regional Victoria and Australia-wide."
         path="/direct-steel-solutions"
       />
 
@@ -68,6 +68,14 @@ export default function DirectSteelPage() {
               >
                 <Phone size={14} /> {s.contact.phone}
               </a>
+              <a
+                href={s.capabilityPdf}
+                download
+                className="flex items-center gap-2 rounded-full border border-cream/30 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-cream transition-colors hover:border-flame hover:text-flame"
+                data-testid="steel-hero-capability"
+              >
+                <Download size={14} /> Capability statement
+              </a>
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-cream/50">{s.regions}</p>
             </div>
           </Reveal>
@@ -84,6 +92,7 @@ export default function DirectSteelPage() {
             </h2>
             <p className="mt-6 max-w-lg text-sm leading-relaxed text-ink/70 sm:text-base">{s.intro.sub}</p>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-ink/80 sm:text-base">{s.intro.body}</p>
+            <p className="mt-4 max-w-lg font-display text-xl font-black text-ink sm:text-2xl">{s.intro.experience}</p>
             <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.3em] text-flame">{s.intro.backedTitle}</p>
             <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink/80 sm:text-base">{s.intro.backed}</p>
           </Reveal>
@@ -170,10 +179,10 @@ export default function DirectSteelPage() {
           <Reveal>
             <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">04 — Supply &amp; fabrication</p>
             <h2 className="mt-3 font-display text-3xl font-black text-cream sm:text-5xl">
-              Practical procurement and <span className="text-flame">fabrication.</span>
+              Supplied, manufactured and <span className="text-flame">fabricated in-house.</span>
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-cream/60 sm:text-base">
-              Reliable steel procurement and fabrication support for commercial and residential steel, coordinated to suit project drawings, program and delivery requirements.
+              We supply and manufacture our own products and run our own fabrication for commercial and residential steel, coordinated to suit project drawings, program and delivery requirements.
             </p>
           </Reveal>
           <Reveal delay={0.15}>
@@ -193,7 +202,7 @@ export default function DirectSteelPage() {
                 <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">Fabrication capability</p>
                 <CheckList items={s.fabrication} />
                 <p className="mt-8 border-t border-white/10 pt-5 font-mono text-[10px] uppercase tracking-[0.25em] text-cream/50">
-                  Steel supply partner · <span className="text-flame">{s.intro.partnerName}</span>
+                  {s.intro.partnerTag} · <span className="text-flame">{s.intro.partnerName}</span>
                 </p>
               </div>
             </Reveal>
@@ -329,6 +338,48 @@ export default function DirectSteelPage() {
         </div>
       </section>
 
+      {/* 09 — Capability statement */}
+      <section className="bg-cream py-20 sm:py-24" data-testid="steel-capability">
+        <div className="mx-auto max-w-[1600px] px-5 sm:px-10">
+          <Reveal>
+            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-flame">09 — Capability statement</p>
+            <h2 className="mt-3 font-display text-3xl font-black text-ink sm:text-5xl">
+              The full statement, <span className="text-stroke-flame">on file.</span>
+            </h2>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-ink/70 sm:text-base">
+              View or download the Direct Steel Solutions capability statement to share with your project team.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href={s.capabilityPdf}
+                download
+                className="sticker sticker-hover flex items-center gap-2 rounded-full bg-flame px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-cream"
+                data-testid="steel-capability-download"
+              >
+                <Download size={14} /> Download PDF
+              </a>
+              <a
+                href={s.capabilityPdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-full border border-ink/20 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-ink transition-colors hover:border-flame hover:text-flame"
+              >
+                Open in new tab <ArrowUpRight size={14} />
+              </a>
+            </div>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="mt-10 hidden overflow-hidden rounded-3xl ring-1 ring-ink/10 md:block">
+              <iframe
+                src={`${s.capabilityPdf}#view=FitH`}
+                title="Direct Steel Solutions capability statement"
+                className="h-[85vh] w-full bg-ink/5"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Contact CTA */}
       <section className="relative overflow-hidden bg-obsidian py-20 sm:py-28" data-testid="steel-contact">
         <div aria-hidden className="pointer-events-none absolute inset-0">
@@ -354,9 +405,11 @@ export default function DirectSteelPage() {
                 <a href={s.contact.phoneHref} className="flex items-center gap-3 font-display text-xl font-black text-cream transition-colors hover:text-flame">
                   <Phone size={18} className="text-flame" /> {s.contact.phone}
                 </a>
-                <a href={s.contact.emailHref} className="flex items-center gap-3 text-sm text-cream/80 transition-colors hover:text-flame sm:text-base">
-                  <Mail size={16} className="text-flame" /> {s.contact.email}
-                </a>
+                {s.contact.emails.map((email) => (
+                  <a key={email} href={`mailto:${email}`} className="flex items-center gap-3 break-all text-sm text-cream/80 transition-colors hover:text-flame sm:text-base">
+                    <Mail size={16} className="shrink-0 text-flame" /> {email}
+                  </a>
+                ))}
                 <a href="/" className="flex items-center gap-3 text-sm text-cream/80 transition-colors hover:text-flame sm:text-base">
                   <Globe size={16} className="text-flame" /> {s.contact.site}
                 </a>
